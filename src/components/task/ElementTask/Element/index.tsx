@@ -34,15 +34,15 @@ export const Element: FC<Props> = ({ task }) => {
     return (
         <Card style={{ minWidth: 240 }}
             actions={[
-                <CheckCircleOutlined onClick={() => onMarkCompleted(task)} />,
-                <RemoveTask id={task._id} />,
+                <CheckCircleOutlined key="complete" onClick={() => onMarkCompleted(task)} />,
+                <RemoveTask key="remove" id={task._id} />,
                 <>
                     {isEdit ?
-                        <CheckCircleOutlined
+                        <CheckCircleOutlined key="editDone"
                             style={{ color: '#73d13d' }}
                             onClick={() => form.submit()} />
                         :
-                        <EditOutlined onClick={() => setIsEdit(true)} />
+                        <EditOutlined key="editSet" onClick={() => setIsEdit(true)} />
                     }
                 </>
             ]} >

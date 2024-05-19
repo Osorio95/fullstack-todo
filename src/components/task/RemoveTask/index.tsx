@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react'
 import { useEditTask } from '@/hooks/useEditTask'
-import { DeleteOutlined, EditOutlined, CheckCircleOutlined } from '@ant-design/icons'
+import { DeleteOutlined } from '@ant-design/icons'
 import { Button, Modal } from 'antd'
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const RemoveTask: FC<Props> = ({ id }) => {
-    const { onRemove } = useEditTask()
+    const { onRemove } = useEditTask(id)
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
